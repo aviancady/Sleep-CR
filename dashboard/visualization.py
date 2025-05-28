@@ -43,7 +43,7 @@ def create_treemap(dataframe: pd.DataFrame, column: str, label: str) -> Figure:
     column_counts.columns = [label, 'Count']
 
     # Create a treemap with Plotly
-    fig = px.treemap(column_counts, path=[label], values='Count', title=f"{label} Proportion")
+    fig = px.treemap(column_counts, names=label, values='Count', title=f"{label} Proportion")
     fig.update_traces(hovertemplate='<b>%{label}</b><br>Total: %{value} person.<extra></extra>')
     return fig
 
